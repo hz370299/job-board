@@ -9,7 +9,7 @@ const Home = () => {
             <div className="container">
                 <div className="jumbotron">
                     <h1 className="display-4">System</h1>
-                    <p className="lead">Hellow</p>
+                    <p className="lead">Hello</p>
                     <hr />
                    
                     <Link to="/dashboard" className="btn btn-info btn-lg">

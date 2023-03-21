@@ -63,7 +63,7 @@ const Dashboard = () => {
             <div className="container">
                 <h1 className="text-primary py-3">Jobs Dashboard</h1>
                 <Link to="/select">
-                    <button className="button">+ADD JOB</button>
+                    <button className="button">+ add job</button>
                 </Link>
 
                 {

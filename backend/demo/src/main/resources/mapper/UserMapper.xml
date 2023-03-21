@@ -1,0 +1,56 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD com.example.Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.UserMapper">
+
+    <resultMap id="result" type="com.example.demo.entity.User">
+        <result property="userId" column="userId" />
+		<result property="occTiltle" column="OCC_TITLE" />
+		<result property="aPct10" column="A_PCT10" />
+		<result property="aMean" column="A_MEAN" />
+    </resultMap>
+
+    <select id="ListUser" resultMap="result">
+		SELECT * FROM national_m2021_dl
+	</select>
+
+    <select id="findUserByName" resultMap="result" parameterType="String">
+		SELECT * FROM national_m2021_dl
+			where OCC_TITLE like concat('%', #{occTiltle}, '%')
+			order by userId desc
+	</select>
+
+	<select id="queryPage" resultMap="result"  parameterType="Integer">
+		select * from national_m2021_dl
+			order by userId desc
+			limit #{startRows},30
+	</select>
+
+	<select id="getRowCount" resultType="Integer">
+		select count(*) from national_m2021_dl
+	</select>
+
+    <insert id="insertUser" parameterType="com.example.demo.entity.User">
+		INSERT INTO national_m2021_dl
+		(
+		userId,occTiltle,aPct10,aMean
+		)
+		VALUES (
+		#{userId},
+		#{occTiltle, jdbcType=VARCHAR},
+		#{aPct10,},
+		#{aMean,},
+		)
+	</insert>
+
+    <delete id="delete" parameterType="int">
+		delete from national_m2021_dl where userId=#{userId}
+	</delete>
+
+    <update id="Update" parameterType="com.example.demo.entity.User">
+		update national_m2021_dl
+			set national_m2021_dl.occTiltle=#{occTiltle}
+			where national_m2021_dl.userId=#{userId}
+	</update>
+</mapper>

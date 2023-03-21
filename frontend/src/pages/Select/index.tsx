@@ -43,7 +43,7 @@ const Dashboard = () => {
                 setPage(response.data)
             })
     }, [])
-    const selectName = () =>{
+    const selectName = () => {
         axios({
             method: 'post',
             url: `${BASE_URL}/ListByName`,
