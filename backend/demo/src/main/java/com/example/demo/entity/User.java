@@ -2,7 +2,7 @@ package com.example.demo.entity;
 
 public class User {
     private int userId;
-    private String occTiltle;
+    private String occTitle;
     private String aPct10;
     private String aMean;
 
@@ -14,12 +14,12 @@ public class User {
         this.userId = userId;
     }
 
-    public String getOccTiltle() {
-        return occTiltle;
+    public String getOccTitle() {
+        return occTitle;
     }
 
-    public void setOccTiltle(String userDate) {
-        this.occTiltle = userDate;
+    public void setOccTitle(String userDate) {
+        this.occTitle = userDate;
     }
 
     public String getAPct10() {
@@ -42,7 +42,7 @@ public class User {
     public String toString() {
         return "User{" +
                 "userId=" + userId +
-                ", occTiltle=" + occTiltle +
+                ", occTitle=" + occTitle +
                 ", aPct10='" + aPct10 + '\'' +
                 ", aMean='" + aMean + '\'' +
                 '}';

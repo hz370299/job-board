@@ -8,7 +8,7 @@ import java.util.List;
 @Mapper
 public interface UserMapper {
 
-    public List<User> findUserByName(String occTiltle);
+    public List<User> findUserByName(String occTitle);
 
     public List<User> ListUser();
 

@@ -6,7 +6,7 @@
 
     <resultMap id="result" type="com.example.demo.entity.User">
         <result property="userId" column="userId" />
-		<result property="occTiltle" column="OCC_TITLE" />
+		<result property="occTitle" column="OCC_TITLE" />
 		<result property="aPct10" column="A_PCT10" />
 		<result property="aMean" column="A_MEAN" />
     </resultMap>
@@ -17,7 +17,7 @@
 
     <select id="findUserByName" resultMap="result" parameterType="String">
 		SELECT * FROM national_m2021_dl
-			where OCC_TITLE like concat('%', #{occTiltle}, '%')
+			where OCC_TITLE like concat('%', #{occTitle}, '%')
 			order by userId desc
 	</select>
 
@@ -34,11 +34,11 @@
     <insert id="insertUser" parameterType="com.example.demo.entity.User">
 		INSERT INTO national_m2021_dl
 		(
-		userId,occTiltle,aPct10,aMean
+		userId,occTitle,aPct10,aMean
 		)
 		VALUES (
 		#{userId},
-		#{occTiltle, jdbcType=VARCHAR},
+		#{occTitle, jdbcType=VARCHAR},
 		#{aPct10,},
 		#{aMean,},
 		)
@@ -50,7 +50,7 @@
 
     <update id="Update" parameterType="com.example.demo.entity.User">
 		update national_m2021_dl
-			set national_m2021_dl.occTiltle=#{occTiltle}
+			set national_m2021_dl.occTitle=#{occTitle}
 			where national_m2021_dl.userId=#{userId}
 	</update>
 </mapper>

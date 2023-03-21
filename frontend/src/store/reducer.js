@@ -1,14 +1,13 @@
-import { combineReducers } from 'redux-immutable';
-import { reducer as searchReducer } from '../components/search/store';
-import { reducer as resultReducer } from '../pages/result/store';
-import { reducer as nowReducer } from '../pages/now/store';
-import { reducer as detailReducer } from '../pages/detail/store';
+import dashboardReducer from 'store/dashboardReducer'
+import totalReducer from 'store/totalReducer'
+import { combineReducers } from 'redux'
+//data should keep in localstorage
+const rootReducer = combineReducers({
+  dashboard: dashboardReducer,
+  total: totalReducer,
 
-const reducer = combineReducers({
-  search: searchReducer,
-  result: resultReducer,
-  now: nowReducer,
-  detail: detailReducer
-});
+})
 
-export default reducer;
+
+
+export default rootReducer

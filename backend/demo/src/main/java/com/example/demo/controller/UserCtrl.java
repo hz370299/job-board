@@ -12,30 +12,29 @@ public class UserCtrl {
 
     @Autowired
     private UserService userService;
-
-    @RequestMapping(value = "/delete", method = RequestMethod.POST)
-    public Integer delete(Integer userId) {
-        System.out.println(userId);
-        int result = userService.delete(userId);
-        return result;
-    }
-
-    @RequestMapping(value = "/update", method = RequestMethod.POST)
-    @ResponseBody
-    public String update(User user) {
-        int result = userService.Update(user);
-        if (result >= 1) {
-            return "修改成功";
-        } else {
-            return "修改失败";
-        }
-
-    }
-
-    @RequestMapping(value = "/insert", method = RequestMethod.POST)
-    public User insert(User user) {
-        return userService.insertUser(user);
-    }
+//
+//    @RequestMapping(value = "/delete", method = RequestMethod.POST)
+//    public Integer delete(Integer userId) {
+//        System.out.println(userId);
+//        int result = userService.delete(userId);
+//        return result;
+//    }
+//
+//    @RequestMapping(value = "/update", method = RequestMethod.POST)
+//    @ResponseBody
+//    public String update(User user) {
+//        int result = userService.Update(user);
+//        if (result >= 1) {
+//            return "success";
+//        } else {
+//            return "fail";
+//        }
+//    }
+//
+//    @RequestMapping(value = "/insert", method = RequestMethod.POST)
+//    public User insert(User user) {
+//        return userService.insertUser(user);
+//    }
 
     @RequestMapping("/ListUser")
     @ResponseBody
@@ -45,14 +44,10 @@ public class UserCtrl {
 
     @RequestMapping("/ListByName")
     @ResponseBody
-    public List<User> ListUserByName(String occTiltle) {
-        return userService.findByName(occTiltle);
+    public List<User> ListUserByName(String occTitle) {
+        return userService.findByName(occTitle);
     }
 
-    /**
-     * 分页
-     * @return
-     */
     @RequestMapping(value="/page")
     @ResponseBody
     public List<User> page(Integer page){
@@ -63,10 +58,6 @@ public class UserCtrl {
         return list;
     }
 
-    /**
-     * rows
-     * @return
-     */
     @RequestMapping(value="/rows")
     @ResponseBody
     public int rows(){

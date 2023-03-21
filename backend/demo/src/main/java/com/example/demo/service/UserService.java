@@ -14,8 +14,8 @@ public class UserService {
     @Autowired
     private UserMapper userMapper;
 
-    public List<User> findByName(String occTiltle) {
-        return userMapper.findUserByName(occTiltle);
+    public List<User> findByName(String occTitle) {
+        return userMapper.findUserByName(occTitle);
     }
 
     public List<User> queryPage(Integer startRows) {
