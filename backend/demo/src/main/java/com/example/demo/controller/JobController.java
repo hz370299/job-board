@@ -1,17 +1,17 @@
 package com.example.demo.controller;
 
-import com.example.demo.entity.User;
-import com.example.demo.service.UserService;
+import com.example.demo.entity.Job;
+import com.example.demo.service.JobService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-public class UserCtrl {
+public class JobController {
 
     @Autowired
-    private UserService userService;
+    private JobService jobService;
 //
 //    @RequestMapping(value = "/delete", method = RequestMethod.POST)
 //    public Integer delete(Integer userId) {
@@ -36,31 +36,31 @@ public class UserCtrl {
 //        return userService.insertUser(user);
 //    }
 
-    @RequestMapping("/ListUser")
+    @RequestMapping("/ListAll")
     @ResponseBody
-    public List<User> ListUser() {
-        return userService.ListUser();
+    public List<Job> ListAll() {
+        return jobService.ListAll();
     }
 
     @RequestMapping("/ListByName")
     @ResponseBody
-    public List<User> ListUserByName(String occTitle) {
-        return userService.findByName(occTitle);
+    public List<Job> ListUserByName(String occTitle) {
+        return jobService.findByName(occTitle);
     }
 
     @RequestMapping(value="/page")
     @ResponseBody
-    public List<User> page(Integer page){
+    public List<Job> page(Integer page){
         int pageNow = page == null ? 1 : page;
         int pageSize = 1000;
         int startRows = pageSize*(pageNow-1);
-        List<User> list = userService.queryPage(startRows);
+        List<Job> list = jobService.queryPage(startRows);
         return list;
     }
 
     @RequestMapping(value="/rows")
     @ResponseBody
     public int rows(){
-        return userService.getRowCount();
+        return jobService.getRowCount();
     }
 }

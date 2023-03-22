@@ -2,16 +2,16 @@
 <!DOCTYPE mapper PUBLIC
         "-//mybatis.org//DTD com.example.Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.demo.mapper.UserMapper">
+<mapper namespace="com.example.demo.mapper.JobMapper">
 
-    <resultMap id="result" type="com.example.demo.entity.User">
+    <resultMap id="result" type="com.example.demo.entity.Job">
         <result property="userId" column="userId" />
 		<result property="occTitle" column="OCC_TITLE" />
 		<result property="aPct10" column="A_PCT10" />
 		<result property="aMean" column="A_MEAN" />
     </resultMap>
 
-    <select id="ListUser" resultMap="result">
+    <select id="ListAll" resultMap="result">
 		SELECT * FROM national_m2021_dl
 	</select>
 
@@ -31,26 +31,26 @@
 		select count(*) from national_m2021_dl
 	</select>
 
-    <insert id="insertUser" parameterType="com.example.demo.entity.User">
-		INSERT INTO national_m2021_dl
-		(
-		userId,occTitle,aPct10,aMean
-		)
-		VALUES (
-		#{userId},
-		#{occTitle, jdbcType=VARCHAR},
-		#{aPct10,},
-		#{aMean,},
-		)
-	</insert>
+<!--    <insert id="insertUser" parameterType="com.example.demo.entity.Job">-->
+<!--		INSERT INTO national_m2021_dl-->
+<!--		(-->
+<!--		userId,occTitle,aPct10,aMean-->
+<!--		)-->
+<!--		VALUES (-->
+<!--		#{userId},-->
+<!--		#{occTitle, jdbcType=VARCHAR},-->
+<!--		#{aPct10,},-->
+<!--		#{aMean,},-->
+<!--		)-->
+<!--	</insert>-->
 
-    <delete id="delete" parameterType="int">
-		delete from national_m2021_dl where userId=#{userId}
-	</delete>
+<!--    <delete id="delete" parameterType="int">-->
+<!--		delete from national_m2021_dl where userId=#{userId}-->
+<!--	</delete>-->
 
-    <update id="Update" parameterType="com.example.demo.entity.User">
-		update national_m2021_dl
-			set national_m2021_dl.occTitle=#{occTitle}
-			where national_m2021_dl.userId=#{userId}
-	</update>
+<!--    <update id="Update" parameterType="com.example.demo.entity.Job">-->
+<!--		update national_m2021_dl-->
+<!--			set national_m2021_dl.occTitle=#{occTitle}-->
+<!--			where national_m2021_dl.userId=#{userId}-->
+<!--	</update>-->
 </mapper>

@@ -1,6 +1,6 @@
 package com.example.demo.entity;
 
-public class User {
+public class Job {
     private int userId;
     private String occTitle;
     private String aPct10;

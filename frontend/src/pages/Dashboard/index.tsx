@@ -38,7 +38,7 @@ const Dashboard = () => {
     },
     series: [
       {
-        name: 'JOBTime',
+        name: 'Starting Salary',
         data: [10, 20, 30, 40, 50],
       },
     ],
@@ -111,13 +111,14 @@ const Dashboard = () => {
                       options={{ ...options, xaxis: chartData.labels }}
                       series={[
                         {
-                          name: 'JOBTime',
+                          name: 'Starting Salary',
                           data: [
-                            Number(item.apct10),
-                            Number(item.apct10 * (1 + 0.3)),
-                            Number(item.apct10 * (1 + 0.6)),
-                            Number(item.apct10 * (1 + 0.9)),
-                            Number(item.apct10 * (1 + 1.2)),
+                            parseFloat((item.apct10 * 1).toFixed(2)),
+                            parseFloat((item.apct10 * 1.03).toFixed(2)),
+                            parseFloat((item.apct10 * 1.03 * 1.03).toFixed(2)),
+                            parseFloat((item.apct10 * 1.03 * 1.03 * 1.03).toFixed(2)),
+                            parseFloat((item.apct10 * 1.03 * 1.03 * 1.03 * 1.03).toFixed(2)),
+                            
                           ],
                         },
                       ]}

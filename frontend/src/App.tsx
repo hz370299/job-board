@@ -7,18 +7,15 @@ import axios from 'axios'
 import { BASE_URL } from 'utils/request'
 
 const App = () => {
-  const dispatch = useDispatch()
-  const [jobList, setJobList] = useState([]);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     //axios get response data and replace payload
     axios({
         method: 'get',
-        url: `${BASE_URL}/ListUser`,
+        url: `${BASE_URL}/ListAll`,
     })
         .then((response) => {
-          setJobList(response.data);
-          console.log(response);
           dispatch({
             type: 'FETCH_DATA', payload: response.data
           })
