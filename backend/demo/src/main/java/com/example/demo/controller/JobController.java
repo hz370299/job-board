@@ -44,7 +44,7 @@ public class JobController {
 
     @RequestMapping("/ListByName")
     @ResponseBody
-    public List<Job> ListUserByName(String occTitle) {
+    public List<Job> ListJobByName(String occTitle) {
         return jobService.findByName(occTitle);
     }
 

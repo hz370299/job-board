@@ -8,7 +8,7 @@ import java.util.List;
 @Mapper
 public interface JobMapper {
 
-    public List<Job> findUserByName(String occTitle);
+    public List<Job> findJobByName(String occTitle);
 
     public List<Job> ListAll();
 

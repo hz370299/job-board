@@ -20,8 +20,6 @@ const App = () => {
             type: 'FETCH_DATA', payload: response.data
           })
         })
-
-
   }, [])
 
   return (

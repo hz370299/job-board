@@ -15,7 +15,7 @@ public class JobService {
     private JobMapper jobMapper;
 
     public List<Job> findByName(String occTitle) {
-        return jobMapper.findUserByName(occTitle);
+        return jobMapper.findJobByName(occTitle);
     }
 
     public List<Job> queryPage(Integer startRows) {

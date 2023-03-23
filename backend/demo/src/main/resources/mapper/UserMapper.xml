@@ -15,7 +15,7 @@
 		SELECT * FROM national_m2021_dl
 	</select>
 
-    <select id="findUserByName" resultMap="result" parameterType="String">
+    <select id="findJobByName" resultMap="result" parameterType="String">
 		SELECT * FROM national_m2021_dl
 			where OCC_TITLE like concat('%', #{occTitle}, '%')
 			order by userId desc
